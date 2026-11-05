@@ -1,0 +1,617 @@
+{
+ "release": "Snap-on Gearhead Garage, Build 131 (Activision Value MSI, 2001)",
+ "aggregate_sha256": "8c6d26a2e43072bddcfe22c27b14e888552397b2a795802cedbaf0c70f13616e",
+ "msi_sha256": "8df931e84afeb470f9bca15b9d2926bd5102591c919462b94a8c291c66617f6e",
+ "files": [
+  {
+   "path": "Data/Cars/bronco.car",
+   "size": 922223,
+   "sha256": "a4f789c4c223883caeb6ddee58571fd18fca1fc1e851bcba1f5fbadb400f1f89"
+  },
+  {
+   "path": "Data/Cars/cab.car",
+   "size": 850228,
+   "sha256": "2da42edfe79fec9907d71295c21a39778372b0d8be044c9501f78b3d4fbbd530"
+  },
+  {
+   "path": "Data/Cars/cammod.car",
+   "size": 478623,
+   "sha256": "daba6b3b13431c8787f175fe08da05a382bcc10d75fd381e4a764fa33dac4dab"
+  },
+  {
+   "path": "Data/Cars/dbuggy.car",
+   "size": 1441842,
+   "sha256": "0bb00330bde9b2dd858e37800336d2b164ce29bab1e714783eaba5d1c9db2cc6"
+  },
+  {
+   "path": "Data/Cars/ecoline.car",
+   "size": 825440,
+   "sha256": "a6f1fbf6ab441e907415d60ec7d9fbbc15308aceff4964f763cc8249ca05e8b0"
+  },
+  {
+   "path": "Data/Cars/escort.car",
+   "size": 652264,
+   "sha256": "cd5b7cb038ad0d05a7c8add7a109071d7f8a100e25f0add5a93797b7b5c33601"
+  },
+  {
+   "path": "Data/Cars/f150.car",
+   "size": 533408,
+   "sha256": "900e6f42baa31c1030ef2a3e9bac6ac4b1ec5c55aacaba6558f67be543c2bebd"
+  },
+  {
+   "path": "Data/Cars/F350.car",
+   "size": 1064972,
+   "sha256": "cb459a1f69eef86b71763409456cc30b2e031a096fbe6e8fbce41abc67a5e0bc"
+  },
+  {
+   "path": "Data/Cars/fairmont.car",
+   "size": 1109447,
+   "sha256": "f3054121748a7c8e3945f22282e90adf9e81f30c332d22e46d266ac028a8557a"
+  },
+  {
+   "path": "Data/Cars/Indycar.car",
+   "size": 1189837,
+   "sha256": "e894627ce45262168c59239352e0127848093a3170f32aaf2a8849a3cef00284"
+  },
+  {
+   "path": "Data/Cars/Mustang.car",
+   "size": 854203,
+   "sha256": "9f66e13739e7595353aac9044cc0ac128cef5759b2ca9e44c75212f9f34a1853"
+  },
+  {
+   "path": "Data/Cars/tbird.car",
+   "size": 653920,
+   "sha256": "33017e3ccdaa5038b9ad200095ab54c250b86e3c87a8298159b2f22c9cd44640"
+  },
+  {
+   "path": "Data/Cars/torino.car",
+   "size": 654607,
+   "sha256": "fb03aac03f583b699eb381fbb95097f333c59e6c5111aa7cb10ae7a71049e553"
+  },
+  {
+   "path": "Data/d3d.vd",
+   "size": 171008,
+   "sha256": "c9394cd571654de11ccadcf823683021b7bd49895487350178a0dc560452491f"
+  },
+  {
+   "path": "Data/Decals/flags.dpk",
+   "size": 23031,
+   "sha256": "d64da5333b65f13aac7ba3775749d9319d6f3f39f77d7a5d37c6d63ebf079c51"
+  },
+  {
+   "path": "Data/Decals/neck.dpk",
+   "size": 304212,
+   "sha256": "e24388cd19611418f292a03230ab2dc3e1fd89a5c93d4967ee386512b9183032"
+  },
+  {
+   "path": "Data/Decals/numbers.dpk",
+   "size": 82480,
+   "sha256": "408d2cacf85674a4db2f1238ca1cbfe61232765a8a7c06e70ed9e7b6f891e4c5"
+  },
+  {
+   "path": "Data/Decals/shapes.dpk",
+   "size": 69948,
+   "sha256": "14b53432fce3ac329bbc458ca846ecbee02e3c10cab30eddba34a59562b41a15"
+  },
+  {
+   "path": "Data/Decals/standard.dpk",
+   "size": 294394,
+   "sha256": "6515c9331a420ea3071f33e943e09cd094e20affb1c23e840ce21ed49226a967"
+  },
+  {
+   "path": "Data/Gfx24.dat",
+   "size": 7687588,
+   "sha256": "674a561c135d959cbc361dade167b29663229d2fc5bdcec2a8b6c608beab69ea"
+  },
+  {
+   "path": "Data/Gfx8.dat",
+   "size": 2057960,
+   "sha256": "81fb1f2adc8c902b83df807bbe86cbb146200185c66fc2220bd6150e4558dd05"
+  },
+  {
+   "path": "Data/Jobs/cab.jpk",
+   "size": 139207,
+   "sha256": "b948b837a3e10a49c7665d8167181edd96b0fa85a8dee1950e498df5a667d1ed"
+  },
+  {
+   "path": "Data/Jobs/ecoline.jpk",
+   "size": 173627,
+   "sha256": "7c0de56142fc8b2c2fb65ebd006501c8826c905dc2586dd886617d25acacaa52"
+  },
+  {
+   "path": "Data/Jobs/escort.jpk",
+   "size": 207749,
+   "sha256": "87e061d8f982280774adc5fa54d6685fed292101c9e3bff3695a7dbb00ae330a"
+  },
+  {
+   "path": "Data/Jobs/f150.jpk",
+   "size": 34681,
+   "sha256": "b94bb663b1c3937b9b4718edb286996d0f624f33fbc41c3074b4f31fc429a91a"
+  },
+  {
+   "path": "Data/Jobs/fairmont.jpk",
+   "size": 69212,
+   "sha256": "adaf1509c4923670c0da6062217857d5a52bec43a62f190fcabf0ce3cb032a9e"
+  },
+  {
+   "path": "Data/Jobs/mustang.jpk",
+   "size": 69140,
+   "sha256": "1fb9e3dbd5b4ec0bb4ba804edb34078965ba1cafe697d1b9b4b6ad6d02e8b3a3"
+  },
+  {
+   "path": "Data/Jobs/random.dat",
+   "size": 2075613,
+   "sha256": "4925ceb8a7e40163abadec46cd4984679ad6b5e7f8ae82dd3687461a31df8a93"
+  },
+  {
+   "path": "Data/Jobs/tbird.jpk",
+   "size": 69481,
+   "sha256": "97c5b212d80a277a92e074353e08070dda90ff03065025f26e4e8c556b5f6c1c"
+  },
+  {
+   "path": "Data/Jobs/tutorial.jpk",
+   "size": 313124,
+   "sha256": "2eab85abc4507ed2f5e92aee2394a52cc832efddd14a8925bebafed1b184d859"
+  },
+  {
+   "path": "Data/Pal.bmp",
+   "size": 1084,
+   "sha256": "d32de71595e3b380266de3a4fe46e43e167118cbfd5f8fef608c12dfeb99147c"
+  },
+  {
+   "path": "Data/random.dat",
+   "size": 2075613,
+   "sha256": "4925ceb8a7e40163abadec46cd4984679ad6b5e7f8ae82dd3687461a31df8a93"
+  },
+  {
+   "path": "Data/Scenes.dat",
+   "size": 333328,
+   "sha256": "e11a76d1a0b2abdd21c83595662a7b62720a4254fe3a73a8a9a6749f1a300e9a"
+  },
+  {
+   "path": "Data/soft8bit.vd",
+   "size": 348160,
+   "sha256": "3462e455687546681f510b2d2b84ff93f5475aee0b7503f7f27b4701499517c8"
+  },
+  {
+   "path": "Data/Sound16.dat",
+   "size": 10714464,
+   "sha256": "0fc4b90338d7f524bdeb4dbf227b7cbb837b926320ac57ee217caf1660c9cad2"
+  },
+  {
+   "path": "Data/Sound8.dat",
+   "size": 1558897,
+   "sha256": "9a3a043853b6f59f4f4393061e81f8c4dd234179778924c776c1256c1972644a"
+  },
+  {
+   "path": "Gearhead.exe",
+   "size": 684032,
+   "sha256": "88d4afde5f391c0c22269e4313e41f659e97daec3b99bb4926f009fbb50fce54"
+  },
+  {
+   "path": "ghg.exe",
+   "size": 1015849,
+   "sha256": "f9d797d580d5a42f2f46b912cd6c107bad34c27a32d050cbee13379a65cc498c"
+  },
+  {
+   "path": "Help/gfx/02autodial.gif",
+   "size": 9666,
+   "sha256": "cc5d94988b56709bca21b8315ec94413ccc00da90155b6d32f6b5ad9f7bfa137"
+  },
+  {
+   "path": "Help/gfx/02eudora.gif",
+   "size": 7837,
+   "sha256": "1b577ba294690b1e860da54d4b18825c11632d341136dcfbbbf006928c2996a3"
+  },
+  {
+   "path": "Help/gfx/02iopts.gif",
+   "size": 926,
+   "sha256": "027cf3490c19c38d65b2d4ac2e665917eb5013653d78a25635c95b88e563ba48"
+  },
+  {
+   "path": "Help/gfx/02lotus1.gif",
+   "size": 627,
+   "sha256": "7d50eb564901eb287f4973f33c3056a9efc90ffbda82fc893aa1f52287b277d7"
+  },
+  {
+   "path": "Help/gfx/02lotus2.gif",
+   "size": 6234,
+   "sha256": "7d74794000d2cb6be98a5641ffbbbeaa6a578e7bda038f6fd46d78092011c57a"
+  },
+  {
+   "path": "Help/gfx/02lotus3.gif",
+   "size": 6086,
+   "sha256": "50805b2215455a64a7f887e16773878dd9c631177533854243fe4807fed92396"
+  },
+  {
+   "path": "Help/gfx/02lotus4.gif",
+   "size": 5247,
+   "sha256": "453c8270dd1cef0afbf5455efb541f9b0a4445d63c2d03972b046a3d1f8a5be2"
+  },
+  {
+   "path": "Help/gfx/02lotus5.gif",
+   "size": 6551,
+   "sha256": "accf1a447d18eab14312429767910bfba64f6fa0b62ed67c9901fe92c1baed29"
+  },
+  {
+   "path": "Help/gfx/02mapitest.gif",
+   "size": 8040,
+   "sha256": "52f371031cfe325498ab3d3e2cae652338789a2b626e94990a163397fba88e02"
+  },
+  {
+   "path": "Help/gfx/02netscape.gif",
+   "size": 33501,
+   "sha256": "a299070128032630baca10dcc365622f498c93048441c01eb1b897755924a4e6"
+  },
+  {
+   "path": "Help/gfx/02oexpress.gif",
+   "size": 9248,
+   "sha256": "36d90ae4593bff46adac69a76676538bce2a5a3fc2d01223ecc592b0c1aa7fff"
+  },
+  {
+   "path": "Help/gfx/02outlook.gif",
+   "size": 4103,
+   "sha256": "98af40a0615d29f4de3920b2c775fc15d1a6e65b0769524a1aa398a88e09464e"
+  },
+  {
+   "path": "Help/gfx/03assembled.gif",
+   "size": 24293,
+   "sha256": "636bdb60b64070267d92371c72161d0956991fbe2c77db7d2bd6d0f5ce8dcd9a"
+  },
+  {
+   "path": "Help/gfx/03bolts.gif",
+   "size": 43784,
+   "sha256": "7e3dbe981630630aae345dcf28575413d0a895a600266c0321bbf866e73eca90"
+  },
+  {
+   "path": "Help/gfx/03catalog.gif",
+   "size": 42346,
+   "sha256": "56c5e5bfa6904a7e71c46ad942b07f8856f45a1ecee05bd960fbe16a51c48631"
+  },
+  {
+   "path": "Help/gfx/03create.gif",
+   "size": 12225,
+   "sha256": "87f73d613734d2f2ce8b3ecaa92e6a3b376dfc233eaa93d6a203219b7c11fbcf"
+  },
+  {
+   "path": "Help/gfx/03freeplay.gif",
+   "size": 38221,
+   "sha256": "1d96c5215eedf03df76d5c1375f590d492c25838fc8871763731f68b768894c1"
+  },
+  {
+   "path": "Help/gfx/03ggicon.gif",
+   "size": 810,
+   "sha256": "3b3cc0a68565c19cbc113675c2a76625e080801926607cebd6af26d5f9e77bb0"
+  },
+  {
+   "path": "Help/gfx/03miray.gif",
+   "size": 16692,
+   "sha256": "740ac7c00c5bc2fdce3d58476c7e3b01d603e3e59c7713fd250d5c38636e819c"
+  },
+  {
+   "path": "Help/gfx/03scrollparts.gif",
+   "size": 13335,
+   "sha256": "88cb55989cc20467a3b2f3fc0e1b9271911734e4fdd23717153b68b052bc44db"
+  },
+  {
+   "path": "Help/gfx/03showc.gif",
+   "size": 43081,
+   "sha256": "fe456ace05ab809e48915df1c574542eefb9468dc4961b4866ae89ec2995d8e2"
+  },
+  {
+   "path": "Help/gfx/03showc2.gif",
+   "size": 29374,
+   "sha256": "2e4fcd827296c8f772e79037228970b223daa64d44a3c09e5d61df93c41e38e0"
+  },
+  {
+   "path": "Help/gfx/03signin.gif",
+   "size": 31411,
+   "sha256": "95d2abfa5010f3688d2c285c40c779235bc46944a658972911d8ccdb4917d5c8"
+  },
+  {
+   "path": "Help/gfx/03tools.gif",
+   "size": 16435,
+   "sha256": "c66cfc4f885b631096f4aac5582b83a2369242ec970b4d87a7a11745d09957b6"
+  },
+  {
+   "path": "Help/gfx/03turnpage.gif",
+   "size": 10419,
+   "sha256": "f47e21a1b0b94162b29bb481a5459b89c5bd77afb3acb2fcce451ffd05f0eb73"
+  },
+  {
+   "path": "Help/gfx/03wsbuts.gif",
+   "size": 34676,
+   "sha256": "a35ae79593929cfd8bbd3af19aa64f9b199f6924cdbaca0e3b46dae22d903e9f"
+  },
+  {
+   "path": "Help/gfx/04auction.gif",
+   "size": 63078,
+   "sha256": "0a267bef395fa748fd65a5ef5262d12a640215fc54fb2cbbad958f874cd73501"
+  },
+  {
+   "path": "Help/gfx/04auctionbid.gif",
+   "size": 5570,
+   "sha256": "83527fb4268044a645f756f09bdd7f57e0aa48102ed2e83ebb367c94a4af7b77"
+  },
+  {
+   "path": "Help/gfx/04bigpic.gif",
+   "size": 99693,
+   "sha256": "71f478bbb7d448047b034a8beec607b79ccffd0bf642bb7f5647b590a544a6f0"
+  },
+  {
+   "path": "Help/gfx/04carlot.gif",
+   "size": 51015,
+   "sha256": "9b5dcc388b58e7b082e158492cfbb59dc876050e8231e192127ad8134dcdb3d2"
+  },
+  {
+   "path": "Help/gfx/04gotoauction.gif",
+   "size": 29299,
+   "sha256": "204d935f376718223f1995aca57c3d7840bae714b70df5b4360f2eb2f3448330"
+  },
+  {
+   "path": "Help/gfx/04gotocarlot.gif",
+   "size": 28192,
+   "sha256": "7fb8115161986687ebbbcf6ff867c878d017154cf553991d0288b10caf099f79"
+  },
+  {
+   "path": "Help/gfx/04gotojunk.gif",
+   "size": 21131,
+   "sha256": "f36474ea48ef4b5d27f3a29885026651badad55ac9aa4e787adc28e82d1cc624"
+  },
+  {
+   "path": "Help/gfx/04junkyard.gif",
+   "size": 57265,
+   "sha256": "44a1b4e148dcbd01562afbd3f617a595a13d1e64ff590e46ccf0dc2f2139c63b"
+  },
+  {
+   "path": "Help/gfx/04paint1.gif",
+   "size": 45546,
+   "sha256": "b420189a4039bb4e2704898538596026089846132d1d0b3406f1e11b48ec2df5"
+  },
+  {
+   "path": "Help/gfx/04paint2.gif",
+   "size": 58673,
+   "sha256": "a6dc1fc5b3b604540b5201f3774a265b3a305cff3f2ad40af5a0e4be862d017f"
+  },
+  {
+   "path": "Help/gfx/04paint3.gif",
+   "size": 64722,
+   "sha256": "22376d9f2b6457bb96e4bb67e82d2e78a084e974a5eec4b526c4afe1146e0041"
+  },
+  {
+   "path": "Help/gfx/04paint4.gif",
+   "size": 20092,
+   "sha256": "6916574ab93e54f29f9540a20fbd127d49ad69d35104a98ea7ca89b80cf7a107"
+  },
+  {
+   "path": "Help/gfx/04snapshot1.gif",
+   "size": 40215,
+   "sha256": "30d84bb2ad1d2f45d6a4b6ae11eb3ef30684b2d545a220af72b844a3977ae846"
+  },
+  {
+   "path": "Help/gfx/04snapshot2.gif",
+   "size": 20382,
+   "sha256": "690d098f55fe32698fd56694ea962f5fda53099c11b5ca5d604009e8de6d9b75"
+  },
+  {
+   "path": "Help/gfx/05contest.gif",
+   "size": 7340,
+   "sha256": "131f2df4c96e591215b40cdb1df4c225c33ab753a4cc4f7edabe6c5153a38d43"
+  },
+  {
+   "path": "Help/gfx/05snapshot1.gif",
+   "size": 3676,
+   "sha256": "415ba21db4cea5f137cd3397eeb792f23bd473883a929a909b29f57c29e9f64e"
+  },
+  {
+   "path": "Help/gfx/05snapshot2.gif",
+   "size": 10658,
+   "sha256": "10602858ee798206235f5c692c536f3686fd949c48d53d949eaaf1965cc3412f"
+  },
+  {
+   "path": "Help/gfx/05snapshot3.gif",
+   "size": 52401,
+   "sha256": "d72e6e95af76a856fe61eb5d42c03d29b84f70378d6df6ecba1e6f7beeef9639"
+  },
+  {
+   "path": "Help/gfx/05updates.gif",
+   "size": 7882,
+   "sha256": "67a61be24a0e08aba59e9b361cb3d7bc5249103f7b94f2268d07224f24a58e86"
+  },
+  {
+   "path": "Help/gfx/8x8.gif",
+   "size": 54,
+   "sha256": "774b768a951c8c730d0415864055d89d9e68b46b61b3b416b5eaeb6e12a9188c"
+  },
+  {
+   "path": "Help/gfx/ghgtitle.gif",
+   "size": 8757,
+   "sha256": "edf422abde9c383cd616e48bec09f62bbd1dceed4e12cd729e48ddf253ed2df9"
+  },
+  {
+   "path": "Help/gfx/leftarrow.gif",
+   "size": 480,
+   "sha256": "00a32be16746b5d8923f8e0004540c0523e2a7ee7a1e2ad256c5c4fd25b16cd4"
+  },
+  {
+   "path": "Help/gfx/mainw.gif",
+   "size": 38936,
+   "sha256": "684e2075beadb7f6c88b3877d39acc03a801474fbdd03a274aa821b5ad3061c3"
+  },
+  {
+   "path": "Help/gfx/mekhglogos.gif",
+   "size": 7575,
+   "sha256": "f594e84f0bc2b9d4ffbd2a3f1e7d9d5aaf4700e71b63797e928465a5fb0923c0"
+  },
+  {
+   "path": "Help/gfx/rightarrow.gif",
+   "size": 465,
+   "sha256": "eb8ece64c5282c8dc65ecfd29a7db759e9b13949ca5881bef89ebde27edf2968"
+  },
+  {
+   "path": "Help/gfx/smallcan.gif",
+   "size": 1573,
+   "sha256": "7ba4f7ab3e3a8448b4d77a26a573bfa907dec4f99a4fab2f3202ebf52f5e2917"
+  },
+  {
+   "path": "Help/gfx/tinyfist.gif",
+   "size": 1501,
+   "sha256": "25a935d28734f46bc2618725991cead5e9cc7fce14413545cf14270de43c0f20"
+  },
+  {
+   "path": "Help/index.htm",
+   "size": 636,
+   "sha256": "fa36e9e7e58784fcbc1b208e9c475ea1d0537ba6c6ffb5100dc09b2896ebf71b"
+  },
+  {
+   "path": "Help/Styles/Styles.css",
+   "size": 617,
+   "sha256": "fbc0bc12ff74f489537d00f173857cad2776a100e2655e4b722c42798c3e0d4a"
+  },
+  {
+   "path": "Help/toc.htm",
+   "size": 12439,
+   "sha256": "c3b40dab414905f85ccfc5f89baeda2e7b44da3e7dc00bfa32d85224a6dc576d"
+  },
+  {
+   "path": "Help/Topics/01otherhelp.htm",
+   "size": 12938,
+   "sha256": "00b31423aec72b28f191dce15f173654ef77a8a85e45a9b851388a8cf71fe5e0"
+  },
+  {
+   "path": "Help/Topics/01welcome.htm",
+   "size": 4826,
+   "sha256": "fcbf93a8674c751df25ec29201f4f1ab59a63d9cc1c65f0cd2c47ba73c6626be"
+  },
+  {
+   "path": "Help/Topics/02directx.htm",
+   "size": 5784,
+   "sha256": "ebe0eeda5c381b4bb06d29c83e8a31983b34f9346634c1e96f6c277cfd3b93c0"
+  },
+  {
+   "path": "Help/Topics/02internet.htm",
+   "size": 5928,
+   "sha256": "13b74ab495daa0c70b709b4019b187d60ad1a111241c0daca3bd38554da05dbe"
+  },
+  {
+   "path": "Help/Topics/02mapi.htm",
+   "size": 11708,
+   "sha256": "11a06ecaaf4daa5d979e9f8bc11f726d0955be94a92502224444abffc499cc26"
+  },
+  {
+   "path": "Help/Topics/02sysreqs.htm",
+   "size": 3259,
+   "sha256": "fb1362a48ed48ff1c273353a5474ec7225fca5b8a260fb82409bd6d854d059f4"
+  },
+  {
+   "path": "Help/Topics/02trouble.htm",
+   "size": 4367,
+   "sha256": "58f45a3045f99563026b310d62a71751db4f121ee9c77835e0c2ba5398d12099"
+  },
+  {
+   "path": "Help/Topics/03controls.htm",
+   "size": 5165,
+   "sha256": "21992bc495c533ca04d0f5892a5a2a358a1a2b44f7188f5f07c1b946f57158c1"
+  },
+  {
+   "path": "Help/Topics/03freelance.htm",
+   "size": 3693,
+   "sha256": "a1c1fa5414797d8a49f19858f8e3deee9fca518005ec66b2798af6d3060e01d6"
+  },
+  {
+   "path": "Help/Topics/03jobs.htm",
+   "size": 6218,
+   "sha256": "b447dfa1778854459cb0e6ed8f47c47628982f8d731fee34aea61c0f10abf9ef"
+  },
+  {
+   "path": "Help/Topics/03signin.htm",
+   "size": 3923,
+   "sha256": "16f03f2ee95e9dee41477bf0d6c22d736e85d22783048bce6da0e93f236e077a"
+  },
+  {
+   "path": "Help/Topics/03startgame.htm",
+   "size": 3574,
+   "sha256": "99d54344da852ac3f6f13737be28cbf2782437ea1df89bcf2f18f2ee34fee8c3"
+  },
+  {
+   "path": "Help/Topics/03tips.htm",
+   "size": 5710,
+   "sha256": "6106519ae50c7bedd5ab7d2288fbbad30601ddce04a632059769830e6499fb9d"
+  },
+  {
+   "path": "Help/Topics/03tools.htm",
+   "size": 3909,
+   "sha256": "45428fde29c3b2dbe58a3faea80eaae4dc5dbc893fd62d9e9069fea50fdb9e3c"
+  },
+  {
+   "path": "Help/Topics/04auction.htm",
+   "size": 4168,
+   "sha256": "a668b07e3249c6433290bfd16c181f94d470a45c5676e9c3ab3007dcb5a11bb6"
+  },
+  {
+   "path": "Help/Topics/04bigpicture.htm",
+   "size": 3124,
+   "sha256": "d4dd458fb6d207ef20e58135513ac9bedc354035da8611663853c99f69d5046d"
+  },
+  {
+   "path": "Help/Topics/04carlot.htm",
+   "size": 4029,
+   "sha256": "299619d539dbbbcfd75a4855318cd972230ef46b0d8198b48a3d7828e97f0b30"
+  },
+  {
+   "path": "Help/Topics/04junkyard.htm",
+   "size": 4410,
+   "sha256": "4c32c31342ab3f10bb5f00ef1fb313a90f6540c59d7a2e7ae25e6b440a03d696"
+  },
+  {
+   "path": "Help/Topics/04painting.htm",
+   "size": 4778,
+   "sha256": "62facc537178814eea468972483f2d7d61c48fc7c911533aec8e7bb185008cba"
+  },
+  {
+   "path": "Help/Topics/04snapshots.htm",
+   "size": 3803,
+   "sha256": "4808960703dcf8c432a5f70c104813ace6221756c529963919870da3f6512424"
+  },
+  {
+   "path": "Help/Topics/05contests.htm",
+   "size": 3910,
+   "sha256": "3f16136ef57d9f2183ec34d4750c7ae587bb47e866a28f2a7678367ba541cc4b"
+  },
+  {
+   "path": "Help/Topics/05mailing.htm",
+   "size": 3817,
+   "sha256": "b68d02f5eaa2f4e0295b4310d6ca05f7364d214894cab35eea19eed0c8bf68c7"
+  },
+  {
+   "path": "Help/Topics/05updates.htm",
+   "size": 3656,
+   "sha256": "723ff5add5dbdcb73ff85edcb2eb78fd25f7145182c51312b611fde6c77b0ada"
+  },
+  {
+   "path": "license.txt",
+   "size": 4300,
+   "sha256": "5930e1e863cc39b5ca3a3c9a601c62bac8406b87c6fb62601b81868aca14e50e"
+  },
+  {
+   "path": "mekupd.dll",
+   "size": 352256,
+   "sha256": "890c3c0522e434f1aae1beb4ce49d5b7ad229e7b4649bf6f2c7354392645782d"
+  },
+  {
+   "path": "readme.txt",
+   "size": 2275,
+   "sha256": "6a89a1e1eeb2a2ddfb3ba22d52fe21e772f2d9dca2d104b685cc9e83d3544225"
+  },
+  {
+   "path": "soft8bit.plt",
+   "size": 176516,
+   "sha256": "8a007c8381b99d1c9e919f09a895599d18a6d0678b19dbba9ec53c22ae16f40f"
+  },
+  {
+   "path": "Uninst.isu",
+   "size": 26150,
+   "sha256": "e18090597ecdb7efe945c0e76952022825a099d61026f0733580c7eb8c2af146"
+  }
+ ]
+}

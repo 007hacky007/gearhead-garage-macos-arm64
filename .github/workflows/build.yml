@@ -1,0 +1,79 @@
+name: Build
+
+# Every push and pull request: the tests and the Builder's disk image (kept as a workflow
+# artifact). A tag v* also publishes the disk image as a GitHub release. No game file is
+# ever available here: the Builder makes the game on the player's own Mac.
+on:
+  push:
+    branches: [master]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  builder:
+    runs-on: macos-15
+    defaults:
+      run:
+        shell: bash
+    env:
+      # Builder version: the tag without its "v"; other runs build 0.0.0-dev.
+      VERSION_TAG: ${{ startsWith(github.ref, 'refs/tags/v') && github.ref_name || 'v0.0.0-dev' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # A release's notes are its CHANGELOG.md section: a tag without one stops here.
+      - name: Release notes
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          set -euo pipefail
+          python tools/release_notes.py "$VERSION_TAG" > "$RUNNER_TEMP/notes.md"
+          cat "$RUNNER_TEMP/notes.md"
+          test "$(cat VERSION)" = "${VERSION_TAG#v}" || { echo "VERSION does not match the tag"; exit 1; }
+
+      - name: Install dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install -r requirements.txt dmgbuild==1.6.7
+
+      - name: Test
+        run: |
+          set -euo pipefail
+          python -B -m unittest discover -s tests -t tests -p 'test_*.py' -v
+          swift test --package-path builder
+
+      - name: Build app
+        run: |
+          set -euo pipefail
+          python tools/make_builder.py --version "${VERSION_TAG#v}" --output dist
+
+      - name: Build disk image
+        run: |
+          set -euo pipefail
+          VERSION="${VERSION_TAG#v}"
+          dmgbuild -s builder/dmg/settings.py -D app="dist/Gearhead Garage Builder.app" "Gearhead Garage Builder $VERSION" dist/Gearhead-Garage-Builder.dmg
+          (cd dist && shasum -a 256 Gearhead-Garage-Builder.dmg > Gearhead-Garage-Builder.dmg.sha256)
+          cat dist/Gearhead-Garage-Builder.dmg.sha256
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Gearhead-Garage-Builder
+          path: |
+            dist/Gearhead-Garage-Builder.dmg
+            dist/Gearhead-Garage-Builder.dmg.sha256
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          VERSION="${VERSION_TAG#v}"
+          gh release create "$GITHUB_REF_NAME" dist/Gearhead-Garage-Builder.dmg dist/Gearhead-Garage-Builder.dmg.sha256 --title "Gearhead Garage Builder $VERSION" --notes-file "$RUNNER_TEMP/notes.md"

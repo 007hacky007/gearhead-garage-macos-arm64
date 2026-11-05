@@ -1,0 +1,22 @@
+# User-supplied game copies and everything derived from them.
+/local/
+/gen/
+/out/
+/.venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.iso
+*.bin
+*.img
+*.cue
+*.msi
+*.MSI
+*.exe
+*.dll
+*.vd
+*.app/
+# Gearhead Garage Builder: SwiftPM build products and the assembled app / disk image
+/builder/.build/
+/builder/.swiftpm/
+/dist/
