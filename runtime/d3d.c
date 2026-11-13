@@ -107,8 +107,10 @@ static int flip_hook(Surface *front, Surface *back){
 }
 
 /* ---- textures ---- */
+/* Surface slots are reused, so a released surface must drop its native texture. */
+static void texture_release(Surface *t){ if (t->texture) render_texture_free(t->texture); }
 static void texture_upload(Surface *t){
-    if (!t->texture) t->texture = (uint32_t)(t - g_surf);
+    if (!t->texture){ t->texture = (uint32_t)(t - g_surf); t->release_hook = texture_release; }
     if (t->uploaded_version == t->texture_version + 1) return;
     uint32_t *buf = malloc((size_t)t->w * t->h * 4);
     const uint8_t *p = g_mem + t->pixels;

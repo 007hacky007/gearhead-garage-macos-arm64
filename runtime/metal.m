@@ -142,7 +142,8 @@ void render_draw(const RenderVertex *v,unsigned count,unsigned primitive,const R
 }
 int render_texture(unsigned handle,unsigned w,unsigned h,unsigned level,unsigned levels,const uint32_t *pixels){
  if(!render_init())return 0;
- id<MTLTexture> t=textures[@(handle)];if(!t){MTLTextureDescriptor *d=[MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatBGRA8Unorm width:w height:h mipmapped:levels>1];d.mipmapLevelCount=levels;d.storageMode=MTLStorageModeShared;t=[gpu newTextureWithDescriptor:d];if(!t)return 0;textures[@(handle)]=t;}
+ id<MTLTexture> t=textures[@(handle)];if(t&&(t.width!=w||t.height!=h||t.mipmapLevelCount!=MAX(levels,1u))){render_flush();t=nil;}
+ if(!t){MTLTextureDescriptor *d=[MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatBGRA8Unorm width:w height:h mipmapped:levels>1];d.mipmapLevelCount=levels;d.storageMode=MTLStorageModeShared;t=[gpu newTextureWithDescriptor:d];if(!t)return 0;textures[@(handle)]=t;}
  if(level>=t.mipmapLevelCount)return 0;
  // CPU writes must not race a pending GPU read of this resource.
  render_flush();[t replaceRegion:MTLRegionMake2D(0,0,w,h) mipmapLevel:level withBytes:pixels bytesPerRow:w*4];return 1;
