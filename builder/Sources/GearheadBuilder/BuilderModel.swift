@@ -334,6 +334,11 @@ final class BuilderModel: ObservableObject {
 
     private func maybeAutoBuild() {
         guard autoBuildPending, phase == .checklist, buildEnabled else { return }
+        // The launcher's Update starts the Builder and then quits: wait for it to be gone.
+        if !NSRunningApplication.runningApplications(withBundleIdentifier: appBundleID).isEmpty {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in maybeAutoBuild() }
+            return
+        }
         autoBuildPending = false
         build()
     }
@@ -417,6 +422,8 @@ final class BuilderModel: ObservableObject {
                 case let .success(target):
                     existingApp = InstalledApp.find(in: destination)
                     phase = .finished(target)
+                    // -OpenWhenDone YES (the launcher's Update): start the new app right away.
+                    if defaults.bool(forKey: "OpenWhenDone") { NSWorkspace.shared.open(target) }
                 case let .failure(error):
                     phase = .failed(step: "Installing the app", message: error.localizedDescription, log: log)
                 }

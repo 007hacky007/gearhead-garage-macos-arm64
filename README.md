@@ -55,7 +55,7 @@ The app opens a small launcher first: choose **Direct3D (full color)** or **Soft
 
 Your mechanics and snapshots are saved in `~/Library/Application Support/Gearhead Garage`, outside the app, so building a new app keeps them. The app carries the whole game, so you can move it anywhere. Keep it to yourself: it contains the game from your copy.
 
-To update, open a newer Builder: it finds your `Gearhead Garage.app` and builds the new one from the game inside it.
+To update, click **Update** in the launcher when it says a new version is available (it checks GitHub's latest release when it opens, or use **Check for Updates...** in its menu). It downloads the new Builder, which builds the new app from the game inside your current one and opens it. You can also open a newer Builder yourself: it finds your `Gearhead Garage.app` the same way.
 
 ## Status
 
