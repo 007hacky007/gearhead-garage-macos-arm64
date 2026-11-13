@@ -141,7 +141,34 @@ static Key key(unsigned code){
 - (void)rightMouseUp:(NSEvent *)event{[self mouse:event button:1 down:0 wheel:0];}
 - (void)otherMouseDown:(NSEvent *)event{[self mouse:event button:(int)event.buttonNumber down:1 wheel:0];}
 - (void)otherMouseUp:(NSEvent *)event{[self mouse:event button:(int)event.buttonNumber down:0 wheel:0];}
-- (void)scrollWheel:(NSEvent *)event{[self mouse:event button:-1 down:0 wheel:(int)(event.scrollingDeltaY*120)];}
+/* The game has no wheel support and rotates its 3D views with a right-drag,
+   which macOS often reports as a two-finger scroll on a trackpad. A trackpad
+   scroll gesture is therefore played as a right-drag; a mouse wheel stays a wheel. */
+static BOOL swiping;static double swipe_dx,swipe_dy;static int swipe_x,swipe_y;
+- (void)scrollWheel:(NSEvent *)event{
+    if(!event.hasPreciseScrollingDeltas){[self mouse:event button:-1 down:0 wheel:(int)(event.scrollingDeltaY*120)];return;}
+    if(event.momentumPhase!=NSEventPhaseNone)return;
+    NSEventPhase phase=event.phase;
+    if(phase&NSEventPhaseBegan){
+        if(swiping)return;
+        int x,y;if(![self gamePoint:event x:&x y:&y])return;
+        swiping=YES;swipe_dx=swipe_dy=0;swipe_x=x;swipe_y=y;
+        input_mouse(x,y,1,1,0);
+    }
+    if(!swiping)return;
+    if(phase&NSEventPhaseChanged){
+        NSSize size=self.bounds.size;if(size.width<=0||size.height<=0)return;
+        double sign=event.isDirectionInvertedFromDevice?1:-1;
+        swipe_dx+=sign*event.scrollingDeltaX*width/size.width;swipe_dy+=sign*event.scrollingDeltaY*height/size.height;
+        int dx=(int)swipe_dx,dy=(int)swipe_dy;swipe_dx-=dx;swipe_dy-=dy;
+        input_mouse_motion(dx,dy,(int)width,(int)height);
+    }
+    if(phase&(NSEventPhaseEnded|NSEventPhaseCancelled)){
+        swiping=NO;
+        int x,y;input_cursor(&x,&y);input_mouse(x,y,1,0,0);
+        input_mouse(swipe_x,swipe_y,-1,0,0);       /* the Mac pointer itself never moved */
+    }
+}
 @end
 
 @interface GameContentView : NSView

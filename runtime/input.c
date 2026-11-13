@@ -11,6 +11,7 @@ static uint8_t keys[256],vkeys[256],buttons[8];
 static uint8_t key_vks[256];
 static int mouse_x,mouse_y,delta_x,delta_y,delta_z;
 static int swapped;
+static uint64_t pressed_at[8],release_due[8];   /* see input_mouse */
 int input_swap_buttons(int value){pthread_mutex_lock(&lock);int old=swapped;swapped=!!value;pthread_mutex_unlock(&lock);return old;}
 static struct { InputEvent queue[1024]; unsigned head,count; uint32_t notification; } queues[2];
 static uint32_t sequence;
@@ -67,7 +68,7 @@ void input_focus(int active){
             event(2,12+button,0);
             if(button<3)message((uint32_t[]){0x202,0x205,0x208}[button],0,(uint16_t)mouse_x|((uint32_t)(uint16_t)mouse_y<<16));
         }
-        memset(keys,0,sizeof keys);memset(vkeys,0,sizeof vkeys);memset(buttons,0,sizeof buttons);
+        memset(keys,0,sizeof keys);memset(vkeys,0,sizeof vkeys);memset(buttons,0,sizeof buttons);memset(release_due,0,sizeof release_due);
         delta_x=delta_y=delta_z=0;
     }
     /* Metal surfaces and CoreAudio keep running when the Mac window loses
@@ -89,9 +90,27 @@ static void mouse_update(int x,int y,int dx,int dy,int button,int down,int wheel
     if(button>=0&&button<3){int mapped=button<2?button^swapped:button;message((uint32_t[]){0x201,0x204,0x207}[mapped]+(down?0:1),wp,lp);}
     if(wheel)message(0x20a,wp|((uint32_t)(uint16_t)wheel<<16),lp);
 }
+/* The game samples button state once per frame, so a press and release in the
+   same frame (a trackpad tap) is lost. Releases are held back to a minimum
+   press length and delivered by input_pump. */
+#define MIN_PRESS_MS 80
+static uint64_t now_ms(void){struct timespec ts;clock_gettime(CLOCK_MONOTONIC,&ts);return (uint64_t)ts.tv_sec*1000+ts.tv_nsec/1000000;}
+static void release_held(int button){
+    if(!release_due[button])return;
+    release_due[button]=0;
+    mouse_update(mouse_x,mouse_y,0,0,button,0,0);
+}
 void input_mouse(int x,int y,int button,int down,int wheel){
-    if(getenv("GEARHEAD_INPUT_TRACE"))fprintf(stderr,"host mouse x=%d y=%d button=%d down=%d\n",x,y,button,down);
+    if(getenv("GEARHEAD_INPUT_TRACE"))fprintf(stderr,"host mouse x=%d y=%d button=%d down=%d wheel=%d\n",x,y,button,down,wheel);
     pthread_mutex_lock(&lock);
+    if(button>=0&&button<8){
+        uint64_t now=now_ms();
+        if(down){release_held(button);pressed_at[button]=now;}
+        else if(buttons[button]&&now<pressed_at[button]+MIN_PRESS_MS){
+            release_due[button]=pressed_at[button]+MIN_PRESS_MS;
+            button=-1;
+        }
+    }
     mouse_update(x,y,x-mouse_x,y-mouse_y,button,down,wheel);
     uint32_t notification=queues[1].notification;
     pthread_mutex_unlock(&lock);
@@ -143,8 +162,8 @@ void input_set_cursor(int x,int y){pthread_mutex_lock(&lock);mouse_x=x;mouse_y=y
 void input_cursor(int *x,int *y){pthread_mutex_lock(&lock);if(x)*x=mouse_x;if(y)*y=mouse_y;pthread_mutex_unlock(&lock);}
 void input_pump(void){
     pthread_mutex_lock(&lock);
-    struct timespec ts;clock_gettime(CLOCK_MONOTONIC,&ts);
-    uint64_t now=(uint64_t)ts.tv_sec*1000+ts.tv_nsec/1000000;
+    uint64_t now=now_ms();
+    for(int button=0;button<8;button++)if(release_due[button]&&now>=release_due[button])release_held(button);
     /* The original game's character vector holds only 64 entries and pops
        them in reverse order. Deliver one letter per UI update interval. */
     if(paste_position<paste_count&&now>=paste_next){
